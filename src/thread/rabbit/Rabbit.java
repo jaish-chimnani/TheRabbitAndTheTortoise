@@ -5,17 +5,15 @@ import javax.swing.*;
 public class Rabbit implements Runnable {
 
     private static final int MILESTONES = 5;
-
-    private float timeInSeconds = 0f;
-
-    public float getTimeInSeconds(){
-        return timeInSeconds;
-    }
-
     private final Thread rabbit;
+    private final float timeInSeconds = 0f;
 
     public Rabbit() {
-        this.rabbit = new Thread(this, "Rabbit");
+        this.rabbit = new Thread (this, "Rabbit");
+    }
+
+    public float getTimeInSeconds() {
+        return timeInSeconds;
     }
 
     public Thread getRabbit() {
@@ -27,34 +25,34 @@ public class Rabbit implements Runnable {
         for (int index = 0; index < MILESTONES; index++) {
             switch (index) {
                 case 0:
-                    System.out.println("The Rabbit has started from the start line!");
+                    System.out.println ("The Rabbit has started from the start line!");
                     break;
                 case 1:
-                    System.out.println("The Rabbit has reached the Cool River!");
+                    System.out.println ("The Rabbit has reached the Cool River!");
                     break;
                 case 2:
-                    System.out.println("The Rabbit has reached the Mountain Hill!");
+                    System.out.println ("The Rabbit has reached the Mountain Hill!");
                     break;
                 case 3:
-                    System.out.println("The Rabbit has reached the Big Oak Tree!");
-                    System.out.println("The Rabbit is leading and hence is going to sleep!");
+                    System.out.println ("The Rabbit has reached the Big Oak Tree!");
+                    System.out.println ("The Rabbit is leading and hence is going to sleep!");
                     try {
-                        Thread.sleep(9000L);
+                        Thread.sleep (9000L);
                     } catch (InterruptedException e) {
-                        System.err.println("The Rabbit's sleep got interrupted!");
+                        System.err.println ("The Rabbit's sleep got interrupted!");
                     }
                     break;
                 case 4:
-                    System.out.println("The Rabbit has reached the finish line!");
+                    System.out.println ("The Rabbit has reached the finish line!");
                     break;
             }
             try {
-                Thread.sleep(1500L);
+                Thread.sleep (1500L);
             } catch (InterruptedException e) {
-                System.err.println("The rabbit has lost the path!");
+                System.err.println ("The rabbit has lost the path!");
             }
         }
-        JOptionPane.showConfirmDialog(
+        JOptionPane.showConfirmDialog (
                 null,
                 "The Rabbit has completed the race!",
                 "Rabbit",
