@@ -6,6 +6,12 @@ public class Rabbit implements Runnable {
 
     private static final int MILESTONES = 5;
 
+    private float timeInSeconds = 0f;
+
+    public float getTimeInSeconds(){
+        return timeInSeconds;
+    }
+
     private final Thread rabbit;
 
     public Rabbit() {
